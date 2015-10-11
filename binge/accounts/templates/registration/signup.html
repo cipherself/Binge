@@ -1,0 +1,49 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+  <form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    
+    <div class="row">
+      <h1>Signup</h1>
+    </div>
+
+    {{ form.non_field_errors }}
+    
+    <div class="row">
+      {{ form.username.errors }}
+      <label for="{{ form.username.id_for_label }}">Username</label>
+      <input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}" max_length="30" placeholder="Enter your username" />
+    </div>
+
+    <br />
+    
+    <div class="row">
+      {{ form.email.errors }}
+      <label for="{{ form.email.id_for_label }}">Email</label>
+      <input type="email" id="{{ form.email.id_for_label }}" name="{{ form.email.html_name }}" placeholder="Enter your email" />
+    </div>
+
+    <br />
+
+    <div class="row">
+      {{ form.password1.errors }}
+      <label for="{{ form.password1.id_for_label }}">Password</label>
+      <input type="password" id="{{ form.password1.id_for_label }}" name="{{ form.password1.html_name }}" placeholder="Enter your password" />
+    </div>
+
+    <br />
+
+    <div class="row">
+      {{ form.password2.errors }}
+      <label for="{{ form.password2.id_for_label }}">Password</label>
+      <input type="password" id="{{ form.password2.id_for_label }}" name="{{ form.password2.html_name }}" placeholder="Confirm your password" />
+    </div>
+
+    <br />
+    
+    <div class="row">
+      <input type="submit" value="Signup" />
+    </div>    
+  </form>
+{% endblock %}

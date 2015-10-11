@@ -1,0 +1,53 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <p>You're already logged in, you can <a href="{% url 'django.contrib.auth.views.logout' %}">logout</a>
+      if you'd like, or you can go to the <a href="{% url 'homepage' %}">homepage</a>.</p>
+  {% else %}
+    <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+      {% csrf_token %} 
+      {% if form.errors %}
+	<div class="row">
+	  <h3>The username or password entered is not correct. Please try again.</h3>
+	</div>
+      {% endif %}
+     
+      <div class="row">
+	<h1>Login</h1>
+      </div>
+
+      {{ form.non_field_errors }}
+      
+      <div class="row">
+	{{ form.username.errors }}
+	<label for="{{ form.username.id_for_label }}">Username</label>
+	<input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}" max_length="30" placeholder="Enter your username" />
+      </div>
+      
+      <br />
+
+      <div class="row">
+	{{ form.password.errors }}
+	<label for="{{ form.password.id_for_label }}">Password</label>
+	<input type="password" id="{{ form.password.id_for_label }}" name="{{ form.password.html_name }}" placeholder="Enter your password" />
+      </div>
+
+      <br />
+
+      <div class="row">
+	<a href="{% url 'password_reset' %}">Lost password?</a>
+      </div>      
+
+      <br />
+      
+      <div class="row">
+	<input type="submit" value="Login" />
+      </div>
+      <input type="hidden" name="next" value="{% url 'homepage' %}" />
+    </form>
+
+
+
+  {% endif %}
+{% endblock %}

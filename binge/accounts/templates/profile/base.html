@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+    <p>Greetings, {{ user.username }}. Welcome to your profile page.</p>
+    <a href="{% url 'django.contrib.auth.views.password_change' %}">Change Password</a>
+  {% else %}
+    <p>Please <a href="{% url 'django.contrib.auth.views.login' %}">login</a> to be able to see your profile.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+
+
+{% block content %}
+  {% if user.is_authenticated %}
+      <div class="main-header row">
+	<button class="three columns nav-button">Watched</button>
+	<button id="to-watch-min" class="three columns nav-button">To Watch</button>
+      </div>
+
+    <div class="row">
+      <div id="to-watch" class="column u-pull-left list to-watch" >
+	<h2>To Watch <button class="minimize-button u-pull-right">X</button></h2>
+	<input class="list-input" type="text" placeholder="Start typing to add an item" />
+	<ul class="search-result" id="to-watch-search"></ul>
+	<ul class="display-ul" id="to-watch-ul">
+	  {% for el in to_watch %}
+	    <li trakt_id="{{ el.trakt_id }}">{{ el }}</li>
+	  {% endfor %}
+	</ul>
+      </div>
+      <div id="watched" class="one-half column u-pull-right list watched">
+	<h2>Watched <button class="minimize-button u-pull-right">X</button></h2>
+	<input class="list-input" type="text" placeholder="Start typing to add an item" />
+	<ul class="search-result" id="watched-search"></ul>
+	<ul class="display-ul" id="watched-ul">
+	  {% for el in watched %}
+	    <li trakt_id="{{ el.trakt_id }}">{{ el }}</li>
+	  {% endfor %}
+	</ul>
+      </div>
+    </div>
+  {% else %}
+    <p>Welcome to Binge. Please <a href="{% url 'django.contrib.auth.views.login' %}">Login</a> or <a href="{% url 'signup' %}">Signup</a> if you don't have an account.</p>
+  {% endif %}
+{% endblock %}

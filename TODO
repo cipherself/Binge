@@ -1,0 +1,6 @@
+- Implement delete functionality.
+- Display description on hover.
+- Handle cases where year === none.
+- Render escaped `&amp` properly.
+- Make addition idempotent on the client side. (It's already idempotent server-side).
+- Stylize buttons.

@@ -1,0 +1,248 @@
+body {
+  background-color: #FFFAD5;
+}
+
+form {
+  background-color: #BD4832;
+  max-width: 80%;
+  padding-top: 0.1em;
+  padding-bottom: 2em;
+  margin: 0 auto;
+  margin-top: 4%;
+  color: black;
+  border-radius: 1em;
+  box-shadow: 0 0 0.5em 0.1em rgba(143,143,143,1);
+}
+
+form>.row {
+  text-align: center;
+}
+
+form>.row>h1 {
+  color: #FFDC71;
+}
+
+form>.row>label {
+  display: none;
+}
+
+form>.row>input[type="text"], form>.row>input[type="password"], form>.row>input[type="email"] {
+  width: 80%;
+}
+
+form>.row>a {
+  float: right;
+  margin-right: 1em;
+  color: #FFDC71;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #BBB;
+  border-radius: 0.3em;
+  padding: 10px 12px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.18) inset;
+}
+
+#userbar {
+  background-color: #BD4832;
+  width: 100%;
+  padding: 0;
+}
+
+#userbar-wrapper {
+  margin-right: 5em;
+  text-align: right;
+}
+
+/* Make this cleaner and proper. */
+#logo {
+  float: left;
+}
+
+#userbar-wrapper>a {
+  text-decoration: none;
+  padding: 2px;
+  height: 2em;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  margin-left: 2em;
+}
+
+/* We should center this */
+.main-header {
+  line-height: 1em;
+}
+
+.nav-button {
+  background-color: #BD4832;
+  padding: 1em;
+  margin-right: 1em;
+  margin-top: 1em;
+  margin-left: 0;
+  max-width: 7em;
+  border: none;
+  border-radius: 0.3em;
+
+  
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1em;
+  display: inline;
+  z-index: 1;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+
+.nav-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFDC71;
+  border-radius: 0.3em;
+    
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.nav-button:hover:before, .nav-button:focus:before, .nav-button:active:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+#to-watch-min {
+  display: none;
+}
+
+.list {
+  background-color: #BD4832;
+  margin-top: 3em;
+  border-radius: 1em;
+  box-shadow: 0 0 0.5em 0.1em rgba(143,143,143,1);
+  display: none;
+  position: relative;
+}
+
+#to-watch {
+  display: block;
+}
+
+.list>h2 {
+  margin-top: 0.5em;
+  /* To account for the minimize button. */
+  margin-left: 1.5em;
+  text-align: center;
+  color: #FFDC71;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.minimize-button {
+  background-color: #4B5A63;
+  margin-right: 1em;
+  margin-top: 1em;
+  padding: 1em;
+  color: white;
+  max-width: 5em;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1em;
+  border: none;
+  border-radius: 0.5em;
+}
+
+.minimize-button:hover {
+  background-color: white;
+  color: #4B5A63;
+}
+
+.list>input {
+  width: 50%;
+  margin: 0;
+  margin-left: 25%;
+  border: none;
+}
+
+.display-ul {
+  padding-top: 0.5em;
+  padding-left: 0;
+  margin-bottom: 2.5em;
+  max-height: 25em;
+  overflow: auto;
+  list-style-type: none;
+}
+
+.display-ul>li {
+  padding: 1em;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 0.1em;
+  background-color: #FFFAD5;
+  color: #575656;
+  max-width: 80%;
+  border-radius: 5px;
+}
+
+.search-result {
+  margin: 0;
+  margin-left: 25%;
+  padding: 1% 1%;
+  max-width: 50%;
+}
+
+.search-result>li {
+  margin: 0 auto;
+  margin-bottom: 3px;
+  background-color: #4B5A63;
+  color: #DADADA;
+  list-style-type: none;
+  text-align: center;
+  padding: 0 5%;
+  border-radius: 5px;
+}
+
+.search-result>li>div:first-child {
+  font-weight: bold;
+}
+
+.search-result>li>div>div.type {
+  float: left;
+}
+
+.search-result>li>div>div.year {
+  float: right;
+}
+
+.slug, .trakt-id {
+  display: none;
+}
+
+.show-h3 {
+  text-align: center;
+  color: #FFDC71;
+}

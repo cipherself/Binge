@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Binge</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/normalize.css'%}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/skeleton.css'%}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" media="all" />
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  </head>
+
+  <body>
+    {% block userbar %}
+      <div id="userbar">
+	<div id="userbar-wrapper">
+	  <a href="{% url 'homepage' %}" id="logo">Binge</a>
+	  {% if user.is_authenticated %}
+	    <a href="{% url 'profile' %}">{{ user.username }}</a>
+	    <a href="{% url 'django.contrib.auth.views.logout' %}">Logout</a>
+	  {% else %}
+	    <a href="{% url 'django.contrib.auth.views.login' %}">Login</a>
+	    <a href="{% url 'signup' %}">Signup</a>
+	  {% endif %}
+	</div>
+      </div>
+    {% endblock %}
+
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+  <script src="{% static 'js/index.js'%}" type="text/javascript" charset="utf-8"></script>
+</html>

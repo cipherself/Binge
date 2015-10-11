@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>Binge</title>
+
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/normalize.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="css/skeleton.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    </head>
+
+    <body>
+        <div id="userbar">
+            <div id="userbar-wrapper">
+                <a href="">user</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="main-header row">
+                <button class="three columns nav-button">Watched</button>
+                <button id="to-watch-min" class="three columns nav-button">To Watch</button>
+            </div>
+
+            <div class="row">
+                <div id="to-watch" class="column u-pull-left list to-watch" >
+                    <h2>To Watch <button class="minimize-button u-pull-right">X</button></h2>
+                    <input class="list-input" type="text" placeholder="Start typing to add an episode" />
+                    <ul class="search-result" id="to-watch-search">
+                    </ul>
+                    <ul class="display-ul" id="to-watch-ul">
+                    </ul>
+                </div>
+                <div id="watched" class="one-half column u-pull-right list watched">
+                    <h2>Watched <button class="minimize-button u-pull-right">X</button></h2>
+                    <input class="list-input" type="text" placeholder="Start typing to add an episode" />
+                    <ul class="search-result" id="watched-search">
+                    </ul>
+                    <ul class="display-ul" id="watched-ul">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="index.js" type="text/javascript" charset="utf-8"></script>
+</html>

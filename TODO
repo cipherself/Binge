@@ -4,3 +4,4 @@
 - Render escaped `&amp` properly.
 - Make addition idempotent on the client side. (It's already idempotent server-side).
 - Stylize buttons.
+- Add CAPTCHA.
